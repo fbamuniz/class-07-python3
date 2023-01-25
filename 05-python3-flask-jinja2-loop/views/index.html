@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python</title>
+</head>
+<body>
+
+    {# Comentário com jinja2 #}
+    <h1>Jinja2</h1>
+    
+    {# Variáveis #}
+    <p>O professor é <b>{{ nome + " " + sobrenome }}</b></p>
+    <hr>
+
+    {# Cálculos #}
+    <p>O cálculo 8 x 8 é igual: <b>{{ 8 * 8 }}</b></p>
+    <hr>
+
+    {# Esrtutura condicional #}
+    {% if nome == "Fred" %}
+        <p>Correto!</p>
+    {% elif nome == "Maria" %}
+        <p>Correto também!</p>
+    {% else %}
+        <p>Errado!</p>
+    {% endif %}
+    <hr>
+
+    {# Estrutura de repetição #}
+    {% for x in range(5) %}
+    <p>
+        <label>Produto {{ x + 1 }}</label>
+        <input type="text" name="produto-{{ x + 1 }}">   
+    </p>
+    {% endfor %}
+    
+</body>
+</html>

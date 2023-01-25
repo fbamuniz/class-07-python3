@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+<body>
+<a href="/add">Adicionar</a>
+<h1>Mostrar</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in estudantes %}
+            <tr>
+                <td>{{ e.nome }}</td>
+                <td>{{ e.idade }}</td>
+                <td>
+                    <a href="/edit/{{ e.id }}">Editar</a>
+                    <a href="/delete/{{ e.id }}">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
