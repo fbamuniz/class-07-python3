@@ -12,7 +12,7 @@ Pré-requisitos:
 
 ```bash
 # clonar repositório
-git clone https://github.com/fbamuniz/class-06-python3.git
+git clone https://github.com/fbamuniz/class-07-python3.git
 
 ```
 
