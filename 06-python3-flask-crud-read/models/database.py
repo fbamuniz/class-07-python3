@@ -1,7 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
+# Utilize o plugin do VSC SQL3Lite Editor para gerenciar o BD
 
 db = SQLAlchemy()
 
+# Classe responsável por criar a entidade "Estudante" com os atributos: id, nome e idade. 
 class Estudante(db.Model):
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150))

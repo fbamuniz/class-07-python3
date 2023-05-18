@@ -7,7 +7,6 @@ def init_app(app):
         estudantes = Estudante.query.all()
         return render_template('index.html', estudantes=estudantes)
 
-
     @app.route('/add', methods=['GET','POST'])
     def add():
         if request.method == 'POST':
@@ -17,21 +16,14 @@ def init_app(app):
             return redirect(url_for('index'))
         return render_template('add.html')
 
-
     @app.route('/edit/<int:id>', methods=['GET','POST'])
     def edit(id):
+        # Faz a busca na base pela id
         estudante =  Estudante.query.get(id)
         if request.method == 'POST':
             estudante.nome = request.form['nome']
             estudante.idade = request.form['idade']
             db.session.commit()
             return redirect(url_for('index'))
+        # Preenche os campos em edit.html com as informações do BD
         return render_template('edit.html',estudante=estudante)
-
-
-    @app.route('/delete/<int:id>')
-    def delete(id):
-        estudante = Estudante.query.get(id)
-        db.session.delete(estudante)
-        db.session.commit()
-        return redirect(url_for('index'))
